@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: service
+  namespace: production
+
+spec:
+  tls:
+  - hosts:
+      - "*.example.xyz"
+    secretName: jokey-xyz-secret-tls
+  ingressClassName: nginx
+  rules:
+    - host: gg.example.xyz 
+      http:
+        paths:
+          - path: /jokey
+            pathType: Prefix
+            backend:
+              service:
+                name: xray
+                port:
+                  number: 10080

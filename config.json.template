@@ -1,0 +1,48 @@
+{
+    "log": {
+        "loglevel": "debug"
+    },
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "block"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "0.0.0.0",
+            "port": 10080,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "dddd23dd-6724-bc53-ad4f-8d5d5828b81d"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+		"wsSettings": {
+                "path": "/xxx"
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ]
+}
+
