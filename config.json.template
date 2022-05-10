@@ -29,7 +29,7 @@
             "streamSettings": {
                 "network": "ws",
 		"wsSettings": {
-                "path": "/xxx"
+                "path": "/jokey"
                 }
             }
         }
