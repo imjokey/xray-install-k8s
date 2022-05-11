@@ -19,7 +19,7 @@ Make sure your certifications `key` and `crt` file put to `tls` directory.
 #### Step 4: Deploy service
 Just run `run.sh` script to deploy it.
 
-> Certainly,  If you have customer  running requirements,  you could  also customize the build script. 
+> Certainly,  If you have custom run requirements,  you could also customize the script. 
 
 ```sh
 sh run.sh 
